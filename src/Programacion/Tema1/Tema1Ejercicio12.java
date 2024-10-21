@@ -1,6 +1,5 @@
-package Tema1;
+package Programacion.Tema1;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Tema1Ejercicio12 {

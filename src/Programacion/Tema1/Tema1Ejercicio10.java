@@ -1,4 +1,4 @@
-package Tema1;
+package Programacion.Tema1;
 //. Implementa en Java una clase llamada Tema1Ejercicio10 que pida por
 //teclado 2 números reales y muestre por pantalla el resultado de su
 //suma, producto, resto y división.

@@ -19,6 +19,7 @@ public class Tema1Ejercicio7 {
             System.out.println("Has introducido "+ dice +" y tú cara opuesta es:"+ ndice);
 
 
+        input.close();
 
         }
 

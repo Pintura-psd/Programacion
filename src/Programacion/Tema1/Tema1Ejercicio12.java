@@ -15,5 +15,7 @@ public class Tema1Ejercicio12 {
         anno=input.nextInt();
 
         if (anno%4==0 && anno%400==0);
+
+        input.close();
     }
 }

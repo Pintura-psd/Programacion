@@ -13,6 +13,8 @@ public class Tema1Ejercicio9 { public static void main(String[] args) {
     num2=input.nextInt();
 
     System.out.println("Suma "+ (num1+num2) +" Resta "+ (num1-num2) +" Producto " + (num1*num2) + " Resto "+ (num1 % num2));
+
+    input.close();
 }
 
 }

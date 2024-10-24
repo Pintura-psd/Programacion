@@ -19,6 +19,7 @@ public class Tema1Ejercicio10 {
 
         System.out.println ("Suma "+ (num1+num2) +" Resta "+ (num1-num2) +" División "+ (num1/num2) +" Resto "+ (num1%num2) +" Producto "+ (num1*num2));
 
+        input.close();
     }
 
 }

@@ -14,6 +14,7 @@ public class Tema1Ejercicio6 {public static void main(String[] args) {
 
     System.out.println("Tu area es:"+ Area);
 
+    input.close();
 }
 
 }

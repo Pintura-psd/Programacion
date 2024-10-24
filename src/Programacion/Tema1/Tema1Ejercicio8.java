@@ -24,6 +24,8 @@ public class Tema1Ejercicio8 {
         }
         else if (num1==num2);
         System.out.println(num1 +" y "+ num2 +" son iguales.");
+
+        input.close ();
     }
 
 }

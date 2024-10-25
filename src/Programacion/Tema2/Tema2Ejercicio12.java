@@ -11,9 +11,9 @@ public class Tema2Ejercicio12 {
             double num1;
             double num2;
             double num3;
-            double big= 0;
-            double medium= 0;
-            double small= 0;
+            double big = 0;
+            double medium = 0;
+            double small = 0;
             Scanner input = new Scanner(System.in);
 
             System.out.println("Dime los tres números de los cuales quieras saber el mayor.");
@@ -30,29 +30,30 @@ public class Tema2Ejercicio12 {
                     medium = num3;
                     small = num2;
                 }
-            }
-            else if (num2 > num1 && num2 > num3) {
-                big = num2;
+            } else if (num2>num1 && num2>num3) {
+                big=num2;
                 if (num1>num3) {
-                    medium= num1;
-                    small=num2;
+                    medium = num1;
+                    small = num3;
                 } else {
-                    medium = num2;
-                    small = num1;
-                }
-                if (num3 > num1 && num3 > num2) {
-                    big = num3;
-                    if (num1>num2) {
-                        medium= num1;
-                        small=num2;
-                    } else {
-                        medium=num2;
-                        small=num1;
+                    medium= num3;
+                    small= num1;
                     }
-            }
+                if (num3>num2 && num3>num1) {
+                    big=num3;
+                    if (num1>num2) {
+                        medium = num1;
+                        small = num2;
+                    } else {
+                        medium = num2;
+                        small = num1;
+                    }
+
+                    }
+                }
 
 
-
-            System.out.println("Tú número mayor es "+ (big) +" mediano "+ (medium) +" y pequeño "+ (small));
+                System.out.println("Tú número mayor es " + (big) + " mediano " + (medium) + " y pequeño " + (small));
+            input.close();
         }
 }

@@ -20,10 +20,10 @@ public class Tema2Ejercicio5 {
         num2=input.nextDouble();
         num3=input.nextDouble();
 
-        medi = num1 + num2 + num3 / 3;
+        medi = (num1 + num2 + num3) / 3;
         System.out.println("Con decimales tu resultado es: "+ medi);
         DecimalFormat df= new DecimalFormat ("#");
-        System.out.println(df.format(medi));
+        System.out.println("Sin decimales es: "+ (df.format(medi)));
 
         input.close();
     }

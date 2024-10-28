@@ -19,13 +19,13 @@ teclado están ordenados de menor a mayor o no.*/
         num3=input.nextDouble();
 
         if (num1<num2 || num1<num3){
-            System.out.println("No están ordenados.");
+            System.out.println("Están ordenados.");
         }else if (num2<num3 || num2>num1){
-            System.out.println("No están ordenados.");
+            System.out.println("Están ordenados.");
         } else if (num3>num1 || num3>num2) {
-            System.out.println("No están ordenados.");
+            System.out.println("Están ordenados.");
         }else {
-            System.out.println("Están ordenados");
+            System.out.println("No están ordenados");
         }
 
         input.close();

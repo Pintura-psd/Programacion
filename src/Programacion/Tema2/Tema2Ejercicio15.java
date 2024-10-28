@@ -28,14 +28,15 @@ bisiesto)*/
     }else if ( month==4||month==6||month==9||month==11) {
         System.out.println("Es un mes de 30 días.");
     }else {
-        System.out.println("Este mes tiene 28 días");
+        if ((year%4==0) && !(year%100==0) || (year%400==0)&&(year%100==0)){
+            System.out.println("Este año es bisiesto y Febrero tiene 29 días.");
+        }else {
+            System.out.println("Este año NO es bisiesto y Febrero tiene 28 días.");
+        }
+        //System.out.println("Este mes tiene 28 días");
     }
 
-    if ((year%4==0) && !(year%100==0) || (year%400==0)&&(year%100==0)){
-        System.out.println("Este año es bisiesto.");
-    }else {
-        System.out.println("Este año NO es bisiesto");
-    }
+
 
 input.close();
     }

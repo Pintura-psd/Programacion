@@ -38,7 +38,7 @@ Intenta no usar break*/
         psquare=base*4;
         System.out.println("Tú área es "+ square +" y tú perímetro"+ psquare);
     } else if (aux==1) {
-        System.out.println("Introduce tu base y tú altura");
+        System.out.println("Introduce tú base y tú altura");
         base=input.nextDouble();
         hight=input.nextDouble();
         rectangle=base*hight;
@@ -57,7 +57,7 @@ Intenta no usar break*/
         ptriangle=base+side1+side2;
         System.out.println("Tú área es "+ triangle +" y tu perímetro "+ ptriangle);
     } else {
-        System.out.println("Esto no es una de las tres figuras platónicas que te he pedido.");
+        System.out.println("Esto no es una de las tres figuras que te he pedido.");
     }
 
 input.close();

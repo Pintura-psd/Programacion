@@ -25,7 +25,7 @@ semana el precio se reduce un 25%. */
 
         price=(nights*15)*person;
 
-        if (person>=5){
+        if (person>=5 && nights>7){
             price=person*(nights*15)*0.75;
         }
 

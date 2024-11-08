@@ -23,15 +23,16 @@ tener en cuenta el negativo).*/
     while (num>=0 ){
         suma= suma +num;
         //aux=num;
-        System.out.println("Introduce un otro número positivo o uno negativo para acbar de contar ");
+        System.out.println("Introduce un otro número positivo o uno negativo para acabar de contar ");
         num=input.nextInt();
         count++;
-    }   if (num<0){
+    }
+    if (num<0){
 
         media= suma/count;
         System.out.println(" Tú media es "+ media );
 
     }
-
+    input.close();
     }
 }

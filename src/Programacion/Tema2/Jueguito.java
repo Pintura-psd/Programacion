@@ -168,7 +168,7 @@ public class Jueguito {
             System.out.println("Realiza tú acción.");
             action2 = input.nextInt();
 
-            if (!(slowest == 1 && action1 == 3)) {
+            if (!(slowest == 1 && action1 != 3)) {
                 System.out.println("player2 ha defendido al player1");
 
             } else if (player2 == "Gerrero") {
@@ -228,9 +228,9 @@ public class Jueguito {
                         break;
                 }
             }
-            else if (speed2 > speed1) ;
+            else if (speed2 > speed1)
             {
-                switch (action1) {
+                switch (action2) {
                     case 1:
                         hit2 = (int) (damage2 * (1 - 0.5 * defense1 / 200));
                         if (hit2 < 0) {
@@ -257,7 +257,7 @@ public class Jueguito {
                         }
                         break;
                     case 2:
-                        //Aquí no relleno porque el bloqueo se desarrola antes porque tiene prioridad.
+                        //Aquí no relleno porque el bloqueo se desarrolla antes porque tiene prioridad.
                         break;
 
                     case 3:
@@ -290,4 +290,3 @@ public class Jueguito {
         }
     }
 }
-

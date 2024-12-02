@@ -234,12 +234,12 @@ public class Jueguito {
                     case 1:
                         hit2 = (int) (damage2 * (1 - 0.5 * defense1 / 200));
                         if (hit2 < 0) {
+                            System.out.println("Hit 2 es: "+ hit2);
                             healthpoints1 = healthpoints1 - hit2;
                         }
                         hit2 = (int) (damage2 * (1 - 0.5 * defense1 / 200));
                         //Entre 200 porque es el máximo de armadura que podemos tener. Es una regla de tres.
                         //El 1 es una reduccicón.
-                        healthpoints1 = healthpoints1 - hit2;
                         //El random necesario de la práctica.
                         if (player2 == "Asesino") {
                             int randomInt = random.nextInt(1);
@@ -254,6 +254,9 @@ public class Jueguito {
                                 healthpoints2 = healthpoints2 - hit1;
                                 System.out.println("Golpe crítico!");
                             }
+                        }
+                        else {
+                            healthpoints1=healthpoints1 - hit2;
                         }
                         break;
                     case 2:

@@ -1,4 +1,4 @@
-package Programacion.Tema3;
+package Programacion.Tema3.Parte1;
 
 import java.util.Scanner;
 

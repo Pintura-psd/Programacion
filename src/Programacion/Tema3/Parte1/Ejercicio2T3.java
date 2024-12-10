@@ -1,4 +1,4 @@
-package Programacion.Tema3;
+package Programacion.Tema3.Parte1;
 /*2) Utiliza la función anterior y una función nueva que crearás llamada
 isAdult para hacer un programa que reciba una edad e indica si se es
 mayor de edad o no.

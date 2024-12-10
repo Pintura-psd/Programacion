@@ -1,4 +1,4 @@
-package Programacion.Tema3;
+package Programacion.Tema3.Parte1;
 
 /*5) Escribe un programa que pida un número entero por consola de 1 a 10 y
 te muestre su tabla de multiplicar.*/

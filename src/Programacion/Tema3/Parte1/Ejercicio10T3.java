@@ -1,4 +1,4 @@
-package Programacion.Tema3;
+package Programacion.Tema3.Parte1;
 /*10)Escribe un programa que muestre un menú con 9 opciones (si tus
 ejercicios son modulares no debería costarte demasiado):
 a) Muestra el signo de un número introducido por el usuario.
@@ -46,6 +46,7 @@ public class Ejercicio10T3 {
         menu = input.next();
 
 //Preguntar cómo hace para que el switch acepte cualquier tipo de caso de letra.
+        menu = menu.toLowerCase();
         switch (menu){
             case "a":
                 System.out.println("Muestra el signo de un número introducido por el usuario.");

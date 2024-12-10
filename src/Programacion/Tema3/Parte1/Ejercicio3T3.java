@@ -1,4 +1,4 @@
-package Programacion.Tema3;
+package Programacion.Tema3.Parte1;
 
 /*3) Crea un programa que pida al usuario un radio válido por teclado (>0) y
 calcule la superficie y perímetro de un círculo. Necesitarás implementar

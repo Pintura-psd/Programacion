@@ -1,4 +1,4 @@
-package Programacion.Tema3;
+package Programacion.Tema3.Parte1;
 
 /* 6) Escribe un programa que muestre las tablas de multiplicar del 1 al 10 */
 public class Ejercicio6T3 {

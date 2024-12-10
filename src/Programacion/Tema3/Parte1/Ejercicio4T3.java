@@ -1,4 +1,4 @@
-package Programacion.Tema3;
+package Programacion.Tema3.Parte1;
 
 /*4) Escribe un programa que permita pasar de euros a dólares y de dólares
 a euros. Necesitarás implementar el procedimiento showMenu() y las
@@ -35,7 +35,7 @@ public class Ejercicio4T3 {
                 System.out.println("Tienes "+ eurosConversion +" $");
                 break;
         }
-        //Recuerda que tienes que usar la variable donde guardas la acción de la función.
+        //Recuerda que tienes que usar la variable dónde guardas la acción de la función.
         input.close();
     }
 }

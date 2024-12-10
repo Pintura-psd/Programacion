@@ -1,12 +1,10 @@
-package Programacion.Tema3;
+package Programacion.Tema3.Parte1;
 
 
 /*8) Escribe un programa que lea por consola un día (1-31), un mes (1-12) y
 un año y nos indique si la fecha es correcta o no.*/
 
 import java.util.Scanner;
-
-import static Programacion.Tema3.Funciones.correctDate;
 
 public class Ejercicio8T3 {
     public static void main (String [] args){

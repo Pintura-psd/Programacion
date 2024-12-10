@@ -1,4 +1,4 @@
-package Programacion.Tema3;
+package Programacion.Tema3.Parte1;
 
 
 import java.util.Scanner;
@@ -82,7 +82,7 @@ public class Funciones {
 
     //Funcion de números primos
     public static boolean primeNumber (int numFun){
-        /*No sé hasta que punto es beuno tener varios returns en una función.
+        /*No sé hasta qué punto es beuno tener varios returns en una función.
         * Preguntar como resolver usando un solo return.*/
         if (numFun<=1){
             return false;
@@ -147,7 +147,7 @@ public class Funciones {
         input.close();
     }
 
-// Para hace una pirámide.
+// Para hacer una pirámide.
     public static void chactPiramid (int hightFun, char symbolFun){
 
         for (int i = 1; i <= hightFun; i++){
@@ -161,10 +161,11 @@ public class Funciones {
 
 //Imprimir un carácter X veces
     public static void characterXtimes (char characterFun, int timesFun ){
-
         for (int i = 0; i < timesFun; i++){
             System.out.print(characterFun);
         }
     }
+
+
 }
 

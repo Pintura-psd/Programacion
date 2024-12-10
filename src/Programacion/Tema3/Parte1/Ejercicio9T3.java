@@ -1,4 +1,4 @@
-package Programacion.Tema3;
+package Programacion.Tema3.Parte1;
 
 /*9) Escribe un procedimiento que muestre por pantalla un triángulo como el
 que hay a continuación. Recibirá 2 parámetros: el carácter y el número

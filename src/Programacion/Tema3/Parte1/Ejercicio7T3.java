@@ -1,4 +1,4 @@
-package Programacion.Tema3;
+package Programacion.Tema3.Parte1;
 
 /*7) Escribe un programa que pida números enteros positivos hasta que se
 introduzca el 0, para cada número nos dirá si es primo o no.*/

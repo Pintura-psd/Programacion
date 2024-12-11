@@ -45,7 +45,7 @@ public class Ejercicoi10T3P2 {
 
         menu = input.nextLine();
 
-        switch ("menu"){
+        switch (menu){
             case "a":
 
                 System.out.println("Introduce que quieres hacer.");
@@ -56,6 +56,8 @@ public class Ejercicoi10T3P2 {
                 System.out.println("4. Área del rectángulo");
                 System.out.println("5. Perímetro del círculo");
                 System.out.println("6. Área del círculo");
+                menuA = input.nextInt();
+
                 switch (menuA) {
                     case 1:
                         //perimetro del cuadrado.

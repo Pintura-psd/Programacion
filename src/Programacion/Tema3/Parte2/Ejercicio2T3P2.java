@@ -25,6 +25,5 @@ public class Ejercicio2T3P2 {
          else {
              System.out.println("No es un número valido");
          }
-
     }
 }

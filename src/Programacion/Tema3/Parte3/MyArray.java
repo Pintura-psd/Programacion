@@ -28,7 +28,7 @@ public class MyArray {
         System.out.println("h: Una función que haga la resta de dos vectores. ");
         System.out.println("i: Multiplicar dos arrays.");
         System.out.println("j: Invertir una array.");
-        System.out.println("k: Indicar si una array es capicua.");
+        System.out.println("k: Indicar si una array es capicúa.");
 
         menu = input.nextLine();
 

@@ -25,7 +25,6 @@ public class juegoParejas {
             tablero[i * 2 + 1] = animales[i];
         }
 
-
         //Mezclar el tablero
         for (int i = 0; i < tablero.length; i++) {
             int j = random.nextInt(tablero.length);
@@ -33,8 +32,8 @@ public class juegoParejas {
             tablero[i] = tablero [j];
             tablero[j] = temp;
         }
-        System.out.println("Tablero mezclado: "+ String.join(" ", tablero));
 
+        System.out.println("Tablero mezclado: "+ String.join(" ", tablero));
 
         while (paresEncontrados < 10){
             //Mostrar tablero:
@@ -48,6 +47,7 @@ public class juegoParejas {
                 }
             }
             System.out.println();
+
             //Verifica que la posición esté en el rango del índice y esté visible.
             System.out.println("Selecciona la PRIMERA posición del 1 al 20");
             pos1 = input.nextInt() -1;
@@ -56,18 +56,12 @@ public class juegoParejas {
                 pos1 = input.nextInt() -1; //Ajusta el indice.
             }
 
-
-
-
             System.out.println("Selecciona la SEGUNDA posición del 1 al 20");
             pos2 = input.nextInt() -1;
             while (pos2 < 0 || pos2 >= 20 || visible[pos2]){
                 System.out.println("La posición no es válida o ya es visible");
                 pos2 = input.nextInt()-1;
             }
-
-
-
 
             if (tablero[pos1].equals(tablero[pos2])) {
                 System.out.println("Has encontrado una pareja!");
@@ -77,9 +71,6 @@ public class juegoParejas {
             else {
                 System.out.println("No es su pareja, intentalo de nuevo.");
             }
-
-
-
         }
     }
 }

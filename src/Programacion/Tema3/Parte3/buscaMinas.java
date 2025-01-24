@@ -84,7 +84,7 @@ public class buscaMinas {
             visible[pos] = true;
             if (tablero[pos] == '*') {
                 perdido = true;
-                System.out.println("¡BOOM! X_X Has perdido. Había una mina!");
+                System.out.println("¡BOOM! X_X Has perdido. ¡Había una mina!");
             } else {
                 descubiertas++;
                 if (descubiertas == (tablero.length - minas)) {

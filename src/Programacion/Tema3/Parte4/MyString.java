@@ -1,5 +1,6 @@
-package Programacion.Tema3.Parte3;
+package Programacion.Tema3.Parte4;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class MyString {
@@ -11,6 +12,7 @@ public class MyString {
 
         System.out.println("a: Invertir una palabra.");
         System.out.println("b: Contar vocales");
+        System.out.println("c: La palabra más larga");
 
         menu = input.next();
 
@@ -24,6 +26,7 @@ public class MyString {
 
                 System.out.println(reverseString(cadena));
             break;
+
             case "b":
                 /*Una función que reciba una cadena y devuelva el número de
                 vocales. */
@@ -34,6 +37,18 @@ public class MyString {
                 System.out.println(vowelsCount(cadena));
 
 
+                break;
+
+            case "c":
+                    /*Una función que reciba una cadena y devuelva la palabra de
+                    mayor longitud.*/
+                System.out.println("Vamos a encontrar la palabra más larga de una frase.");
+                System.out.println(" ");
+                System.out.println("Introduce tu frase:");
+                cadena = input.nextLine();
+
+                input.nextLine();
+                System.out.println(longestWord(cadena));
                 break;
         }
 
@@ -59,5 +74,22 @@ public static int vowelsCount(String cadena){
             }
         }
         return count;
+}
+
+public static String longestWord (String cadena){
+        int length=0;
+        cadena = Arrays.toString(cadena.split(" "));
+        String[] cadenaArray = cadena.split(" ");
+        String longWord = " ";
+
+        for (int i = 0; i > cadena.length(); i++) {
+            if (length < cadenaArray[i].length()){
+                length = cadenaArray[i].length();
+                longWord = cadenaArray[i];
+            }
+        }
+
+
+        return longWord;
 }
 }

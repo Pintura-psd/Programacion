@@ -55,7 +55,6 @@ public class Hangman {
                 System.out.println("Has ganado!");
              }
 
-
             switch (tries){
                 case 1 :
                     System.out.println("Oh, no...!");
@@ -97,5 +96,4 @@ public class Hangman {
             }
         }
     }
-
 }

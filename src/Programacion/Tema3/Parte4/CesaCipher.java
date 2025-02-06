@@ -50,7 +50,7 @@ reemplaza por 0.
         String encrypt = " ";
         String cadenaUpper = cadena.toUpperCase();
         for (int i = 0; i < cadenaUpper.length(); i++){
-            //crean un índice con con los caracteres de la string.
+            //crean un índice con los caracteres de la string.
             char indiceCarateres = cadenaUpper.charAt(i);
             //Selecciona solo caracteres
             if (Character.isLetter(indiceCarateres)){

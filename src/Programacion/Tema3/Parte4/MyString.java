@@ -211,31 +211,31 @@ public class MyString {
 
         System.out.println(cadena);
         System.out.print("a: "+ countA+" ");
-        for (int i = 0 ; i <= countA; i++){
+        for (int i = 0 ; i < countA; i++){
             System.out.print("*");
         }
         System.out.println(" ");
 
         System.out.print("e: "+ countE+" ");
-        for (int i = -1 ; i <= countE; i++){
+        for (int i = 0 ; i < countE; i++){
             System.out.print("*");
         }
         System.out.println(" ");
 
         System.out.print("i: "+ countI+" ");
-        for (int i = -1 ; i <= countI; i++){
+        for (int i = 0 ; i < countI; i++){
             System.out.print("*");
         }
         System.out.println(" ");
 
         System.out.print("o: "+ countO+" ");
-        for (int i = -1 ; i <= countO; i++){
+        for (int i = 0 ; i < countO; i++){
             System.out.print("*");
         }
         System.out.println(" ");
 
         System.out.print("u: "+ countU+" ");
-        for (int i = -1 ; i <= countU; i++){
+        for (int i = 0 ; i < countU; i++){
             System.out.print("*");
         }
     }

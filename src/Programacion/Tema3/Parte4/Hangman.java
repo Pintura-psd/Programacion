@@ -10,9 +10,6 @@ public class Hangman {
         char letterUSU = ' ';
         boolean solve = false;
         boolean letraCorrecta = false;
-
-
-
         int tries = 0;
 
         System.out.println("Juego del ahorcado.");
@@ -27,7 +24,8 @@ public class Hangman {
         }
         System.out.println(barraBaja);
 
-        while (tries < 6 || solve == false){
+        //No entiendo bien cuando usar el || o el &&.
+        while (tries < 6 && solve == false){
                 System.out.println("Introduce una leta de la A a la Z");
                 letterUSU = input.next().charAt(0);
 
@@ -58,40 +56,40 @@ public class Hangman {
             switch (tries){
                 case 1 :
                     System.out.println("Oh, no...!");
-                    System.out.println("Intentos: "+ tries);
+                    System.out.println("Intentos: "+ (6 - tries));
                     System.out.println(" O ");
                     break;
                 case 2:
                     System.out.println("Oh, no...!");
-                    System.out.println("Intentos: "+tries);
-                    System.out.println(" O ");
-                    System.out.println("/");
+                    System.out.println("Intentos: "+ (6 - tries));
+                    System.out.println("  O ");
+                    System.out.println("/ ");
                     break;
                 case 3:
                     System.out.println("Oh, no...!");
-                    System.out.println("Intentos: "+tries);
-                    System.out.println(" O ");
-                    System.out.println("/|");
+                    System.out.println("Intentos: "+ (6 - tries));
+                    System.out.println("  O ");
+                    System.out.println("/ |");
                     break;
                 case 4:
                     System.out.println("Oh, no...!");
-                    System.out.println("Intentos: "+tries);
-                    System.out.println(" O ");
-                    System.out.println("/| \\ ");
+                    System.out.println("Intentos: "+(6 - tries));
+                    System.out.println("  O ");
+                    System.out.println("/ | \\ ");
                     break;
                 case 5:
                     System.out.println("Oh, no...!");
-                    System.out.println("Intentos: "+tries);
-                    System.out.println(" O ");
-                    System.out.println("/|\\ ");
-                    System.out.println("/  ");
+                    System.out.println("Intentos: "+(6 - tries));
+                    System.out.println("  O ");
+                    System.out.println("/ | \\ ");
+                    System.out.println("/   ");
                     break;
                 case 6:
-                    System.out.println("Oh, no...!");
-                    System.out.println("Intentos: "+tries);
-                    System.out.println(" O ");
-                    System.out.println("/|\\ ");
-                    System.out.println("/  \\ ");
+                    System.out.println("Déjalo, ya no respira... X_X");
+                    System.out.println("Intentos: "+(6 - tries));
+                    System.out.println("  O ");
+                    System.out.println("/ | \\ ");
+                    System.out.println("/   \\ ");
                     break;
             }
         }

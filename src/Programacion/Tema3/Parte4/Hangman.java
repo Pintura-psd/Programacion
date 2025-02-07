@@ -26,7 +26,10 @@ public class Hangman {
 
         //No entiendo bien cuando usar el || o el &&.
         while (tries < 6 && solve == false){
+
+            letraCorrecta = false;
                 System.out.println("Introduce una leta de la A a la Z");
+                //input.nextLine();
                 letterUSU = input.next().charAt(0);
 
             for (int i = 0; i < letters.length; i++){
@@ -43,7 +46,9 @@ public class Hangman {
                     letraCorrecta = true;
                 }
             }
+
             if (!letraCorrecta) {
+                monigote(tries);
                 tries++;
             }
 
@@ -52,46 +57,48 @@ public class Hangman {
                 solve=true;
                 System.out.println("Has ganado!");
              }
+        }
+    }
 
-            switch (tries){
-                case 1 :
-                    System.out.println("Oh, no...!");
-                    System.out.println("Intentos: "+ (6 - tries));
-                    System.out.println(" O ");
-                    break;
-                case 2:
-                    System.out.println("Oh, no...!");
-                    System.out.println("Intentos: "+ (6 - tries));
-                    System.out.println("  O ");
-                    System.out.println("/ ");
-                    break;
-                case 3:
-                    System.out.println("Oh, no...!");
-                    System.out.println("Intentos: "+ (6 - tries));
-                    System.out.println("  O ");
-                    System.out.println("/ |");
-                    break;
-                case 4:
-                    System.out.println("Oh, no...!");
-                    System.out.println("Intentos: "+(6 - tries));
-                    System.out.println("  O ");
-                    System.out.println("/ | \\ ");
-                    break;
-                case 5:
-                    System.out.println("Oh, no...!");
-                    System.out.println("Intentos: "+(6 - tries));
-                    System.out.println("  O ");
-                    System.out.println("/ | \\ ");
-                    System.out.println("/   ");
-                    break;
-                case 6:
-                    System.out.println("Déjalo, ya no respira... X_X");
-                    System.out.println("Intentos: "+(6 - tries));
-                    System.out.println("  O ");
-                    System.out.println("/ | \\ ");
-                    System.out.println("/   \\ ");
-                    break;
-            }
+    public static void monigote (int tries){
+        switch (tries){
+            case 0 :
+                System.out.println("Oh, no...!");
+                System.out.println("Intentos: "+ (5 - tries));
+                System.out.println(" O ");
+                break;
+            case 1:
+                System.out.println("Oh, no...!");
+                System.out.println("Intentos: "+ (5 - tries));
+                System.out.println("  O ");
+                System.out.println("/ ");
+                break;
+            case 2:
+                System.out.println("Oh, no...!");
+                System.out.println("Intentos: "+ (5 - tries));
+                System.out.println("  O ");
+                System.out.println("/ |");
+                break;
+            case 3:
+                System.out.println("Oh, no...!");
+                System.out.println("Intentos: "+(5 - tries));
+                System.out.println("  O ");
+                System.out.println("/ | \\ ");
+                break;
+            case 4:
+                System.out.println("Oh, no...!");
+                System.out.println("Intentos: "+(5 - tries));
+                System.out.println("  O ");
+                System.out.println("/ | \\ ");
+                System.out.println("/   ");
+                break;
+            case 5:
+                System.out.println("Déjalo, ya no respira... X_X");
+                System.out.println("Intentos: "+(5 - tries));
+                System.out.println("  O ");
+                System.out.println("/ | \\ ");
+                System.out.println("/   \\ ");
+                break;
         }
     }
 }

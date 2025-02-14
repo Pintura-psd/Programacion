@@ -2,7 +2,7 @@ package Programacion.Tema4;
 
 public class Persona {
     //Atributos de persona
-    private String dni ;
+    private final String dni ;
     private String nombre;
     private  String apellidos;
     private  int edad;
@@ -38,17 +38,20 @@ public class Persona {
         character = dniArray[9];
 
         if (dniArray.length > 9){
-            System.out.println("El DNI no es válido");
-        } else if (!Character.isDigit(character)) {
+            System.out.println("El DNI no es válido.");
+        } else if (!Character.isLetter(character)) {
             System.out.println("El DNI no es válido.");
         }
+
+        this.dni = dniArray.toString();
     }
 
-    public void ageDifference (int age ){
-        System.out.println("Introduce el la edad de ");
-
+    public void ageDifference (int age1, int age2 ){
+        if (age1<age2){
+            System.out.println("La diferencia de edad es: "+ (age2-age1));
+        }
+        else {
+            System.out.println("La diferencia de edad es: "+ (age1-age2));
+        }
     }
-
-
-
 }

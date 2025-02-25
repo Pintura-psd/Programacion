@@ -1,13 +1,32 @@
 package Programacion.Tema4;
 
 public class Persona {
-    //Atributos de persona
-    private final String dni ;
+    //Atributos
+    private final String dni;
     private String nombre;
-    private  String apellidos;
-    private  int edad;
+    private String apellidos;
+    private int edad;
 
-    //Constructor vacío.
+    // Constantes
+    private static final int itsAdult = 18;
+    private static final int itsRetired = 67;
+
+    //Constructor parametrizado
+    public Persona (String dni, String nombre, String apellidos, int edad) {
+        if (dni.length() > 9 || dni.length() < 9) {
+            System.out.println("DNI no válido");
+            System.out.println("Se establecerán valores vacíos.");
+            this.dni=" ";
+        }
+        else {
+            this.dni = dni;
+        }
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.edad = edad;
+    }
+
+    //constructor vacio
     public Persona() {
         this.dni = " ";
         this.nombre = " ";
@@ -15,43 +34,115 @@ public class Persona {
         this.edad = 0;
     }
 
-    public Persona (String dni, String nombre,String apellidos, int edad){
-        boolean itsAdult = false;
-        boolean itsRetired = false;
-        char[] dniArray = dni.toCharArray();
-
-        if (this.edad > 18){
-            itsAdult = true;
-        }
-        else {
-            itsAdult = false;
-        }
-
-        if (this.edad > 65){
-            itsRetired = true;
-        }
-        else {
-            itsRetired = false;
-        }
-
-        char character;
-        character = dniArray[9];
-
-        if (dniArray.length > 9){
-            System.out.println("El DNI no es válido.");
-        } else if (!Character.isLetter(character)) {
-            System.out.println("El DNI no es válido.");
-        }
-
-        this.dni = dniArray.toString();
+    @Override
+    public String toString() {
+        return String.format("%s %s, %d años, DNI: %s", this.nombre, this.apellidos, this.edad, this.dni);
+        //return " " + this.nombre + ", ";
     }
 
-    public void ageDifference (int age1, int age2 ){
-        if (age1<age2){
-            System.out.println("La diferencia de edad es: "+ (age2-age1));
+    public String getDni() {
+        return this.dni;
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public void setNombre(String nombre2) {
+        this.nombre = nombre2;
+    }
+
+    public String getApellidos() {
+        return this.apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public int getEdad() {
+        return this.edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+
+    //metodo si es adulto
+    public boolean itsAdult() {
+        return this.edad >= itsAdult;
+    }
+
+    //método si está jubilado
+    public boolean itsRetired() {
+        return this.edad >= itsRetired;
+    }
+
+    //Metodo de diferencia de edad.
+    public int ageDifference(Persona persona2) {
+        int diference;
+
+        if ((this.edad - persona2.edad) < 0) {
+            diference = persona2.edad - this.edad;
+            return diference;
+        } else {
+            diference = this.edad - persona2.edad;
+            return diference;
         }
-        else {
-            System.out.println("La diferencia de edad es: "+ (age1-age2));
+    }
+
+
+    public boolean checkDNI() {
+        String letterMayus = " ";
+
+        if (this.dni.length() != 9 || Character.isLetter(this.dni.charAt(0)) == false) {
+            return false;
         }
+
+        letterMayus = (this.dni.substring(8)).toUpperCase();
+
+        if (soloNumeros() == true && letraDNI().equals(letterMayus)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private boolean soloNumeros() {
+
+        int i, j = 0;
+        String num = " ";
+        String miDNI = " ";
+        String[] unoNueve = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
+
+        for (i = 0; i < dni.length() - 1; i++) {
+            num = dni.substring(i, i + 1);
+
+            for (j = 0; j > unoNueve.length; j++) {
+                if (num.equals(unoNueve[j])) {
+                    miDNI += unoNueve[j];
+                }
+            }
+        }
+        if (miDNI.length() != 8) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    private String letraDNI() {
+
+        int miDNI = Integer.parseInt(this.dni.substring(0, 8));
+        int resto = 0;
+        String myLetter = " ";
+        String[] posiblesLetra = {
+                "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
+                "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+
+        resto = miDNI % 23;
+
+        myLetter = posiblesLetra[resto];
+        return myLetter;
     }
 }

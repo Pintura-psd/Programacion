@@ -1,6 +1,7 @@
 package Programacion.Tema4;
 
 public class Goblin {
+    private boolean alive;
     private String name = "goblin";
     private int level;
     private int attack;
@@ -10,26 +11,21 @@ public class Goblin {
     private int exp;
 
     //constantes
-    private static final int levelMax = 100;
-    private static final int healthPotion = 10;
-    private static final int resting = 50;
-    private static final int lowestHealth = 0;
-    private static final int expByAtack = 10;
-    private static final int levelUpExp = 50;
+    private static final int levelMax = 120;
 
-    public Goblin (String name, int level, int attack, int defense, int maxHealth, int currentHealth, int exp){
-        if (this.level > 100){
-            this.level = 100;
-        }
-        else {this.level = level;
-        }
+
+    public Goblin (String name, int level, int attack, int defense, int maxHealth){
+
 
         //atributos
+        this.name = name;
         this.maxHealth = level * 10;
         this.currentHealth = maxHealth;
-        this.exp = exp;
+        //No quiero que suban de nivel durante el combate.
+        this.exp = 0;
         this.attack = attack;
         this.defense = defense;
+        this.alive = true;
     }
 
         //constructor vacío
@@ -42,7 +38,7 @@ public class Goblin {
         this.attack = 0;
         this.defense = 0;
     }
-
+    //constructor con parámetros
     public void setCurrentHealth(int currentHealth) {
         if (currentHealth < 0) {
             this.currentHealth = 0;
@@ -51,6 +47,14 @@ public class Goblin {
         } else {
             this.currentHealth = currentHealth;
         }
+    }
+
+    public void damage(Hero hero) {
+        int damage = this.attack - hero.getDefense();
+        if (damage <= 0) {
+            damage = 1;
+        }
+        hero.setCurrentHealth(hero.getCurrentHealth() - damage);
     }
 
     public String getName() {
@@ -66,7 +70,12 @@ public class Goblin {
     }
 
     public void setLevel(int level) {
-        this.level = level;
+       if(this.level < 0){
+           this.level = 1;
+       }
+       else {
+           this.level = level;
+       }
     }
 
     public int getAttack() {
@@ -93,14 +102,8 @@ public class Goblin {
         this.maxHealth = maxHealth;
     }
 
-    public void getCurrentHealth() {
-        if (currentHealth < 0) {
-            this.currentHealth = 0;
-        } else if (currentHealth > maxHealth) {
-            this.currentHealth = maxHealth;
-        } else {
-            this.currentHealth = currentHealth;
-        }
+    public int getCurrentHealth() {
+        return currentHealth;
     }
 
     public int getExp() {
@@ -113,7 +116,7 @@ public class Goblin {
 
     @Override
     public String toString() {
-        return String.format("Hero{name='%s', level=%d, maxHealth=%d, exp=%d, attack=%d, defense=%d}",
+        return String.format("Goblin {name='%s', level=%d, maxHealth=%d, exp=%d, attack=%d, defense=%d}",
                 this.name, this.level, this.maxHealth, this.exp, this.attack, this.defense);
     }
 }

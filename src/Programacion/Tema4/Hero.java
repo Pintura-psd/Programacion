@@ -13,21 +13,21 @@ public class Hero {
 
     //constantes
     private static final int levelMax = 100;
-    private static final int healthPotion = 10;
+    private static final int healthPotion = 20;
     private static final int resting = 50;
-    private static final int lowestHealth = 0;
     private static final int expByAtack = 10;
     private static final int levelUpExp = 50;
 
     //constructor parametrizado
     public Hero (String name, int level, int exp, int attack, int defense){
 
-        if (this.level > 100){
-            this.level = 100;
+        if (this.level > levelMax){
+            this.level = levelMax;
         }
         else {this.level = level;
         }
 
+        this.name = name;
         this.maxHealth = level * 10;
         this.currentHealth = maxHealth;
         this.exp = exp;
@@ -123,31 +123,48 @@ public class Hero {
         if(this.currentHealth > this.maxHealth){
            this.currentHealth = this.maxHealth;
         }
-
     }
 
     //Descanso
     public void restingMethod () {
-        setCurrentHealth(currentHealth += resting);
+        setCurrentHealth(currentHealth + resting);
 
-        if (this.currentHealth > this.maxHealth) {
+        if(this.currentHealth > this.maxHealth){
             this.currentHealth = this.maxHealth;
         }
     }
 
     //ataque
-    public void damage (Hero heroe2){
+    /*public void damage (Hero heroe2 ){
         int damage;
         damage = this.attack - heroe2.defense;
         if (damage <= 0){
             damage = 1;
         }
-        heroe2.currentHealth = (heroe2.currentHealth - damage);
+        heroe2.currentHealth = (heroe2.getCurrentHealth() - damage);
+        this.exp += expByAtack;
+        while (this.exp >= levelUpExp ) {
+            levelUP();
+        }
+    }*/
+
+    public void damage (Goblin goblin ){
+        int damage;
+        damage = this.attack - goblin.getDefense();
+        if (damage <= 0){
+            damage = 1;
+        }
+        goblin.setCurrentHealth((goblin.getCurrentHealth() - damage));
+        this.exp += expByAtack;
+        while (this.exp >= levelUpExp ) {
+            levelUP();
+        }
     }
 
     //subir nivel
     public void levelUP (){
         if (exp >= levelUpExp) {
+            System.out.println(this.name + " Ha subido de nivel!");
             setLevel(level +1);
             setMaxHealth(getMaxHealth() + 5);
             setAttack(getAttack()+ 1);
@@ -155,4 +172,5 @@ public class Hero {
             setExp(0);
         }
     }
+
 }

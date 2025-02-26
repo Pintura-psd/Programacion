@@ -95,16 +95,16 @@ public class Persona {
     public boolean checkDNI() {
         String letterMayus = " ";
 
-        if (this.dni.length() != 9 || Character.isLetter(this.dni.charAt(0)) == false) {
+        if (this.dni.length() != 9 || Character.isLetter(this.dni.charAt(8)) == false) {
             return false;
         }
 
         letterMayus = (this.dni.substring(8)).toUpperCase();
 
-        if (soloNumeros() == true && letraDNI().equals(letterMayus)) {
-            return true;
-        } else {
+        if (soloNumeros() && letraDNI().equals(letterMayus)) {
             return false;
+        } else {
+            return true;
         }
     }
 
@@ -115,19 +115,20 @@ public class Persona {
         String miDNI = " ";
         String[] unoNueve = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
-        for (i = 0; i < dni.length() - 1; i++) {
-            num = dni.substring(i, i + 1);
+        for (i = 0; i < this.dni.length() - 1; i++) {
+            num = this.dni.substring(i, i + 1);
 
-            for (j = 0; j > unoNueve.length; j++) {
+            for (j = 0; j < unoNueve.length; j++) {
                 if (num.equals(unoNueve[j])) {
                     miDNI += unoNueve[j];
                 }
             }
         }
-        if (miDNI.length() != 8) {
-            return false;
-        } else {
+
+        if (miDNI.length() == 9) {
             return true;
+        } else {
+            return false;
         }
     }
 

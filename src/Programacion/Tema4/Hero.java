@@ -135,7 +135,7 @@ public class Hero {
     }
 
     //ataque
-    /*public void damage (Hero heroe2 ){
+    public void damage (Hero heroe2 ){
         int damage;
         damage = this.attack - heroe2.defense;
         if (damage <= 0){
@@ -146,30 +146,37 @@ public class Hero {
         while (this.exp >= levelUpExp ) {
             levelUP();
         }
-    }*/
-
+    }
+    /*
     public void damage (Goblin goblin ){
         int damage;
-        damage = this.attack - goblin.getDefense();
-        if (damage <= 0){
-            damage = 1;
-        }
-        goblin.setCurrentHealth((goblin.getCurrentHealth() - damage));
-        this.exp += expByAtack;
-        while (this.exp >= levelUpExp ) {
-            levelUP();
-        }
-    }
+       if (goblin != null) {
+           damage = this.attack - goblin.getDefense();
+           if (damage <= 0) {
+               damage = 1;
+           }
 
+           goblin.setCurrentHealth((goblin.getCurrentHealth() - damage));
+
+           this.exp += expByAtack;
+           while (this.exp >= levelUpExp) {
+               levelUP();
+           }
+       }
+    }
+     */
     //subir nivel
     public void levelUP (){
         if (exp >= levelUpExp) {
             System.out.println(this.name + " Ha subido de nivel!");
+            System.out.println(" ");
             setLevel(level +1);
             setMaxHealth(getMaxHealth() + 5);
             setAttack(getAttack()+ 1);
             setDefense(getDefense()+ 1);
             setExp(0);
+            System.out.println("Nivel: "+ this.level);
+            System.out.println(" Vida máxima: "+ this.maxHealth + " Ataque: "+ this.attack + " Defensa: "+ this.defense);
         }
     }
 

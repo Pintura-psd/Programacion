@@ -1,4 +1,4 @@
-package Programacion.Tema5;
+package Programacion.Tema5.Gym;
 
 public class GymUsuario {
     private  String name;

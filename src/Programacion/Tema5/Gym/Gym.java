@@ -1,4 +1,4 @@
-package Programacion.Tema5;
+package Programacion.Tema5.Gym;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -116,10 +116,11 @@ public class Gym {
             System.out.println("No hay usuarios registrados");
         }
         else {
-        //No me queda laro este for each lo que hace
+        //No me queda claro este for each lo que hace
             for (Map.Entry<String, GymUsuario> entry : gymUsuarios.entrySet()) {
                 System.out.println("DNI: " + entry.getKey() + ", " + entry.getValue());
             }
         }
+
     }
 }

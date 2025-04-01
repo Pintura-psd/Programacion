@@ -1,4 +1,4 @@
-package Programacion.Tema5;
+package Programacion.Tema5.Carrito1y4;
 /*1. Haz una aplicación que permita crear una lista de la compra. Leerá por
 consola varios productos y los guardará todos en un set. Si intentas guardar
 dos veces el mismo producto te avisará que ya existe el producto.*/
@@ -8,6 +8,8 @@ dos veces el mismo producto te avisará que ya existe el producto.*/
 import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
+
+
 
 public class CarritoAmpliado {
     public static void main(String[] args) {

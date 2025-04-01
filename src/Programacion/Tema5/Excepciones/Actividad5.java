@@ -28,7 +28,7 @@ public class Actividad5 {
                  }
                  catch (Exception e){
                      //e(nombre de la excepción).getMessage coge la string del constructor de la excepción.
-                     System.out.println("el número es: "+ num + e.getMessage());
+                     System.out.println("El número es: "+ num +" "+ e.getMessage());
                  }
             }
             catch (NumberFormatException e){

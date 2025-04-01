@@ -62,7 +62,7 @@ public class BankQueue {
 
     public static void queueRemoveFirst(List<BankUser> cola, Scanner input){
         input.nextLine();
-        //Preguntar a ana el porqué de Pooll();
+        //Preguntar a ana el porqué de Poll();
         if (cola.isEmpty()){
             System.out.println("No hay usuarios en cola.");
         }

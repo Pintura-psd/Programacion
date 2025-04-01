@@ -30,14 +30,14 @@ public class Gato {
     }
 
     public void setName(String name) throws Exception {
-        if (name.length() > 3) {
+        if (name.length() <= 2) {
             throw new Exception("No se admiten nombres menores de 3 letras. Su nombre será Bob");
         }
         this.name = name;
         }
 
+    @Override
+    public String toString(){
+        return "Nombre: "+ this.name +" edad: "+ this.age ;
     }
-
-
-
-
+}

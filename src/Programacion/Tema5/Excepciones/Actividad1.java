@@ -17,6 +17,7 @@ public class Actividad1 {
         //Se gestiona la excepción de InputMisMatchException
         try {
             num = input.nextInt();
+
         }
         catch (Exception e){
             System.out.println("El valor introducido es incorrecto.");

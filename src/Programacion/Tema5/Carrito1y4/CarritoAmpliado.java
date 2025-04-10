@@ -84,9 +84,9 @@ public class CarritoAmpliado {
 
     public static void missProducts(Set<String> productsList, Set<String> productsNest){
        //Preguntar por HashSet
-        Set<String> leftProducsts = new HashSet<>(productsList);
+        //Set<String> leftProducsts = new HashSet<>(productsList);
         productsList.remove(productsNest);
         System.out.println("Productos que faltan por comprar.");
-        System.out.println(leftProducsts);
+        System.out.println(productsList);
     }
 }

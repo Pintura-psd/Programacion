@@ -35,7 +35,7 @@ public class Actividad2 {
 
         }
         catch (InputMismatchException e){
-            System.out.println("El valor introducido es incorrecto.");
+            System.err.println("El valor introducido es incorrecto.");
         }
         catch (ArithmeticException e){
             result = 0;

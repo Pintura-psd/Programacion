@@ -14,7 +14,7 @@ public class Actividad3 {
 
         System.out.println("Introduce los valores de tú grupo de 5.");
 
-        for (int i = 0; i < 5;i++) {
+        for (int i = 0; i < 6;i++) {
             try {
                 System.out.println("Introduce tú valor: ");
                 vector[i] = input.nextDouble();

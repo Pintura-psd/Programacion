@@ -47,6 +47,8 @@ todas las posibles excepciones.*/
           /*     input.next(); //Limpiamos el buffer
                 vista = input.nextInt();*/
           // }
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
         }
 
     }

@@ -1,4 +1,4 @@
-package Programacion.Tema6;
+package Programacion.Tema6.Animales;
 
 public abstract class Animal {
     public abstract void comer();

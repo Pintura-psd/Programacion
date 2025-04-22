@@ -1,4 +1,4 @@
-package Programacion.Tema7;
+package Programacion.Tema7.EjerciciosB;
 
 public class Alumno {
     private String nombre;

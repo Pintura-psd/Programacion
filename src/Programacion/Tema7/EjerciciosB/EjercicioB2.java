@@ -1,8 +1,7 @@
-package Programacion.Tema7;
+package Programacion.Tema7.EjerciciosB;
 
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -15,6 +14,7 @@ public class EjercicioB2 {
 
         List<String> lineas = null;
         List<Alumno> alumnos = new ArrayList<>();
+
         try {
             lineas = Files.readAllLines(Paths.get("Documentos/alumnos_notas.txt"));
         } catch (IOException e) {

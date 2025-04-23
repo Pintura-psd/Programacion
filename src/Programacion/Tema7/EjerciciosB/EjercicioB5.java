@@ -57,7 +57,6 @@ comiencen por dicha letra.*/
         catch (IOException e){
             System.out.println("Problemas al crear el fichero."+ e.getMessage());
         }
-
         finally {
             {
                 for (FileWriter ficherosLetra : ficheros.values()){

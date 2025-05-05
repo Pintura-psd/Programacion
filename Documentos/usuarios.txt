@@ -1,0 +1,10 @@
+Nombre: Fer
+Edad: 25
+Nombre: Javier
+Edad: 26
+Nombre: Eustaquio
+Edad: 86
+Nombre: Muriel
+Edad: 68
+Nombre: Agallas
+Edad: 4

@@ -11,7 +11,7 @@ public class AtaqueMagico implements IAtaque {
 
     @Override
     public void lanzar() {
-
+//falta sout se ha lanzado
     }
 
     @Override

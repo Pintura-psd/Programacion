@@ -5,8 +5,10 @@ public class Truck extends Vehicle{
     private int maximunCarryWight;
     private Boolean dangerousCarry;
 
-    public Truck(int wheelsCuantity, int weight, int personelCapacity, String model) {
-        super(wheelsCuantity, weight, personelCapacity, model);
+    public Truck(int wheelsCuantity, int weight, String model, int maximunCarryWight, boolean dangerousCarry1) {
+        super(wheelsCuantity, weight, model);
+        this.maximunCarryWight= maximunCarryWight;
+        this.dangerousCarry= dangerousCarry1;
     }
 
     public int getMaximunCarryWight() {

@@ -79,6 +79,7 @@ public class EjercicioB3 {
             }
         }
         catch(Exception e){
+            System.out.println(e.getMessage());
             System.out.println("Ha habido un error de escritura.");
         }
 

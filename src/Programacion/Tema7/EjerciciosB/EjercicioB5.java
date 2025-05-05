@@ -25,11 +25,11 @@ comiencen por dicha letra.*/
         Map<Character, FileWriter> ficheros = new HashMap<>();
 
         if(!Diccionario.exists()){
-        Diccionario.mkdir();
-        System.out.println("Se ha creado la carpeta Diccionario.");
+            Diccionario.mkdir();
+            System.out.println("Se ha creado la carpeta Diccionario.");
         }
         else {
-        System.out.println("No se ha podido crear la carpeta Diccionario.");
+         System.out.println("No se ha podido crear la carpeta Diccionario.");
         }
 
         try {

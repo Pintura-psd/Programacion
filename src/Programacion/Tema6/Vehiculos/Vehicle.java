@@ -8,7 +8,7 @@ public class Vehicle {
 
 
 
-    public Vehicle(int wheelsCuantity, int weight, int personelCapacity, String model) {
+    public Vehicle(int wheelsCuantity, int weight, String model) {
         this.wheelsCuantity = wheelsCuantity;
         this.weight = weight;
         this.model = model;

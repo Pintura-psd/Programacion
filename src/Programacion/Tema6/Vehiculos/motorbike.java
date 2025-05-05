@@ -5,8 +5,8 @@ public class motorbike extends Vehicle {
     private int cubicCentimetres;
     private Boolean mandatoryCarnet = true;
 
-    public motorbike(int wheelsCuantity, int weight, int personelCapacity, String model) {
-        super(wheelsCuantity, weight, personelCapacity, model);
+    public motorbike(int wheelsCuantity, int weight, String model) {//falta cubic
+        super(wheelsCuantity, weight, model);
         if (cubicCentimetres < 125){
             mandatoryCarnet = false;
         }

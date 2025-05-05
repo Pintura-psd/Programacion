@@ -10,7 +10,8 @@ public class PublicarTexto implements  IPublicacionConReaccion{
 
     @Override
     public void publicar() {
-
+        System.out.println();
+        //falta rellenar los método
     }
 
     @Override

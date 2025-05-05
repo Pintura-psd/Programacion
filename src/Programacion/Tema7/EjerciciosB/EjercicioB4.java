@@ -23,6 +23,7 @@ public class EjercicioB4 {
         Path rutaNombres = Paths.get("Documentos/usa_nombres.txt");
         Path rutaApellidos = Paths.get("Documentos/usa_apellidos.txt");
         Path rutaNombresGenerados = Paths.get("Documentos/nombres_generados.txt");
+        System.out.println("Indica cuantos nombres quieres generar");
         int contador = input.nextInt();
 
         try {
@@ -34,7 +35,7 @@ public class EjercicioB4 {
 
         System.out.println("Generador de nombres");
         System.out.println(" ");
-        System.out.println("Indica cuantos nombres quieres generar");
+
 
         for (int i = 0; i < contador ; i++) {
             nombresGenerados.add(nombres.get(random.nextInt(nombres.size())));

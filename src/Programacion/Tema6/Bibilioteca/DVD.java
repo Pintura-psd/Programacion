@@ -7,6 +7,9 @@ public class DVD extends Ficha{
 
     public DVD(int num, String title, String director, String gender) {
         super(num, title);
+        this.director = director;
+        //faltan atirbutos
+
     }
 
     public String getDirector() {

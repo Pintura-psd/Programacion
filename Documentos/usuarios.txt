@@ -8,3 +8,7 @@ Nombre: Muriel
 Edad: 68
 Nombre: Agallas
 Edad: 4
+Nombre: Ana
+Edad: 3
+Nombre: a
+Edad: 1

@@ -4,13 +4,14 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Stream;
 
-import static Programacion.Tema7.Funkos.FunkosMain.input;
+
 import static java.util.stream.Collectors.toList;
 
 public class FunkoMetodos {
@@ -25,6 +26,7 @@ public class FunkoMetodos {
         System.out.println("Mostrar la media del precio de los funkos: 4");
         System.out.println("Mostrar grupos de Funkos: 5");
         System.out.println("Mostrar funkos lanzados en 2023: 6");
+        System.out.println("Salir: 7");
     }
 
     //Seleccionar menu
@@ -34,7 +36,6 @@ public class FunkoMetodos {
 
         try {
             seleccion = input.nextInt();
-            input.nextLine();
         } catch (Exception e) {
             System.out.println("Introduce un numero entero." + e.getMessage());
         } finally {
@@ -44,9 +45,6 @@ public class FunkoMetodos {
                 System.out.println("Debes introducir una opción válida.");
                 seleccion = 0;
             }
-
-            input.nextLine();
-
         }
         return seleccion;
     }
@@ -81,4 +79,172 @@ public class FunkoMetodos {
 
     //Guardar Funkos nuevos
 
+    public static void addFunkos (Scanner input,ArrayList listaImportadaFunkos ){
+        int contador;
+
+        input.nextLine();
+        System.out.println("¿Cuantos funkos deseas ingresar?");
+        contador = input.nextInt();
+        input.nextLine();
+
+        for (int i = 0; i < contador; i++) {
+            System.out.println("Introduce el código: ");
+            String codigo = input.nextLine();
+            if (listaImportadaFunkos.contains(codigo)) {
+                while (!listaImportadaFunkos.contains(codigo))
+                    System.out.println("Ese codigo ya existe");
+                System.out.println("Introduce de nuevo el código:");
+                input.nextLine();
+            } else {
+
+                System.out.println("Introduce el nombre: ");
+                String nombre = input.nextLine();
+                System.out.println("Introduce el modelo;");
+                String modelo = input.nextLine();
+                System.out.println("Introduce la fecha: ");
+                String fecha = input.nextLine();
+                //El double lo pongo al final que si no limpiar el buffer es un coñazo.
+                System.out.println("Introduce el precio: ");
+                Double precio = input.nextDouble();
+                //Limpiar buffer
+                //System.out.println("Pulsa enter: ");
+                input.nextLine();
+
+
+                Funko funkoTemp = new Funko(codigo, nombre, modelo, precio, fecha);
+                listaImportadaFunkos.add(funkoTemp);
+                String lineaCSV;
+                lineaCSV = funkoTemp.getCodigo() + ","
+                        + funkoTemp.getNombre() + ","
+                        + funkoTemp.getModelo()+ ","
+                        + funkoTemp.getPrecio()+ ","
+                        + funkoTemp.getFecha()+ "\n";
+                //Escribir en la listaCSV
+                escribirFunkosCSV(lineaCSV);
+            }
+        }
+      mostrarFunkos(listaImportadaFunkos);
+    }
+
+    //Escribir en el CSV
+    public static void escribirFunkosCSV (String lineaCSV){
+        Path rutaArchivo = Paths.get("Documentos/funkos.csv");
+        try {
+            Files.writeString(rutaArchivo, lineaCSV, StandardOpenOption.APPEND, StandardOpenOption.WRITE);
+        }
+        catch (Exception e){
+            System.out.println("No se ha podido escribir la linea."+ e.getMessage());
+        }
+    }
+
+    //Eliminar Funko
+    public static void borrarFunko (Scanner input, ArrayList<Funko> listaImportadaFunkos){
+        String nombre;
+        //System.out.println("Limpiando buffer...");
+        input.nextLine();
+        System.out.println("Introduce el nombre del funko que quieres borrar.");
+        nombre = input.nextLine();
+        ArrayList<Funko> nuevaLista = new ArrayList<>();
+
+        //Si uso un .remove la lista altera los indices y peta durante el for.
+        //Ahora, hago locontrario. Que escriba todo, menos cuado coincide el nombre.
+        for (Funko funko : listaImportadaFunkos){
+            if (!funko.getNombre().equals(nombre)){
+                nuevaLista.add(funko);
+            }
+        }
+        eliminarFunkoCSV(nuevaLista);
+        mostrarFunkos(nuevaLista);
+    }
+
+    //Eliminar del CSV
+    public static void eliminarFunkoCSV (ArrayList<Funko> nuevaLista){
+        Path rutaArchivo = Paths.get("Documentos/funkos.csv");
+            try{
+                Files.writeString(rutaArchivo, "COD,NOMBRE,MODELO,PRECIO,FECHA_LANZAMIENTO"+ "\n");
+            }
+            catch (Exception e){
+                System.out.println("No se ha podido escribir el archivo." + e.getMessage());
+            }
+            for (Funko funkoTemp : nuevaLista){
+                try {
+                    Files.writeString(rutaArchivo , funkoTemp.getCodigo() +","+
+                            funkoTemp.getNombre()+","+
+                            funkoTemp.getModelo()+","+
+                            funkoTemp.getPrecio()+","+
+                            funkoTemp.getFecha()+ "\n"
+                            , StandardOpenOption.APPEND);
+                }
+                catch (Exception e){
+                    System.out.println("No se ha podido escribir bien el archivo." + e.getMessage());
+                }
+            }
+        System.out.println("Se ha rescrito el CSV con éxito.");
+    }
+
+    //Enseñar funcos
+    public static void mostrarFunkos (ArrayList<Funko> listaImportadaFunkos){
+        System.out.println("Lista de Funkos: ");
+        for(Object funko : listaImportadaFunkos){
+            System.out.println(funko);
+        }
+    }
+
+    //Media de precio de los funkopopos
+    public static double mediaFunkos(ArrayList<Funko> listaImportadaFunkos){
+        double contador = 0;
+        double media;
+
+        for (Funko funkoTemp : listaImportadaFunkos ){
+           contador =contador + funkoTemp.getPrecio();
+        }
+        media = contador / listaImportadaFunkos.size();
+        return media;
+    }
+
+    //Mostrar grupo de funkos
+    public static void funkosPorGrupos (Scanner input, ArrayList<Funko> listaImportadaFunkos){
+        String nombreModelo;
+        ArrayList<Funko> listaPorModelo = new ArrayList<>();
+        input.nextLine();
+        System.out.println("Introduce el nombre del modelo que buscas.");
+        nombreModelo = input.nextLine().toUpperCase();
+
+
+            for (Funko funkoTemp : listaImportadaFunkos) {
+                if (funkoTemp.getModelo().equals(nombreModelo)) {
+                    listaPorModelo.add(funkoTemp);
+                }
+                else{
+                    System.out.println("El modelo no existe.");
+                    System.out.println("Saliendo...");
+                    System.exit(0);
+                }
+            }
+
+        System.out.println("Lista por modelos: ");
+        mostrarFunkos(listaPorModelo);
+    }
+
+    //Mostrar funkos por año
+    public static void funkosPorFecha(Scanner input, ArrayList<Funko> listaImportadaFunkos){
+        String fecha = "2023";
+        ArrayList<Funko> listaPorFecha = new ArrayList<>();
+        input.nextLine();
+        /*System.out.println("Introduce la fecha por la que deseas buscar.");
+        fecha = input.nextLine();*/
+
+        for (Funko funkoTemp : listaImportadaFunkos) {
+            if (funkoTemp.getFecha().contains(fecha)) {
+                listaPorFecha.add(funkoTemp);
+            }
+            /*else if (!funkoTemp.getFecha().contains(fecha)) {
+                System.out.println("No hay registro de esa fecha.");
+                System.out.println("Saliendo...");
+                System.exit(0);*/
+        }
+
+        System.out.println("Lista por fecha: ");
+        mostrarFunkos(listaPorFecha);
+    }
 }

@@ -213,13 +213,16 @@ public class FunkoMetodos {
 
             for (Funko funkoTemp : listaImportadaFunkos) {
                 if (funkoTemp.getModelo().equals(nombreModelo)) {
-                    listaPorModelo.add(funkoTemp);
+//                    System.out.println(funkoTemp);
+                   listaPorModelo.add(funkoTemp);
                 }
-                else{
+
+               /* else{
                     System.out.println("El modelo no existe.");
                     System.out.println("Saliendo...");
                     System.exit(0);
-                }
+                }*/
+
             }
 
         System.out.println("Lista por modelos: ");

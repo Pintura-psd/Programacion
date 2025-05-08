@@ -13,10 +13,12 @@ public class FunkosMain {
         ArrayList<Funko> listaImportadaFunkos = FunkoMetodos.importCSV();
         //Menu
 
-        int menuSeleccion = 0;
+        int menuSeleccion=1;
 
 
-        while (menuSeleccion == 0) {
+
+
+        while (menuSeleccion != 0) {
             FunkoMetodos.menu();
             menuSeleccion = FunkoMetodos.seleccion(input);
             switch (menuSeleccion) {

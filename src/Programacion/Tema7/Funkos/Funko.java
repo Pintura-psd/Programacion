@@ -1,6 +1,9 @@
 package Programacion.Tema7.Funkos;
+
+import java.io.Serializable;
+
 //Datos: COD,NOMBRE,MODELO,PRECIO,FECHA_LANZAMIENTO
-public class Funko {
+public class Funko implements Serializable {
     private String codigo;
     private String nombre;
     private String modelo;

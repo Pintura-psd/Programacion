@@ -2,6 +2,8 @@ package Programacion.Tema7.RankingVidejuegos;
 
 import Programacion.Tema7.Funkos.Funko;
 import Programacion.Tema7.Funkos.FunkoMetodos;
+import Programacion.Tema7.RankingVidejuegos.Exceptions.JuegoNoEncontrado;
+import Programacion.Tema7.RankingVidejuegos.Exceptions.NotaFueraDeRangoException;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -193,8 +195,10 @@ public class MetodosVidejuegos {
             try {
                 nota = input.nextInt();
                 seleccion = 1;
+
             }
             catch (Exception e){
+
                 System.out.println(" ");
                 System.out.println("Introduce una nota valida");
             }
@@ -395,6 +399,9 @@ public class MetodosVidejuegos {
                 System.out.println("Se ha eliminado el juego correctamente:");
                 System.out.println("Recuerda guardar los cambios.");
             }
+            else {
+                throw new JuegoNoEncontrado("No se ha encontrado el juego dentro de la lista;");
+            }
 
         }
         catch (Exception e){
@@ -470,4 +477,6 @@ public class MetodosVidejuegos {
             System.out.println("Recuerda guardar si quieres manterlo ordenado por nota.");
         }
     }
+
+
 }

@@ -1,4 +1,4 @@
-package Programacion.Tema8;
+package Programacion.Tema8.Hogwarts;
 
 import java.io.InputStream;
 import java.nio.file.Files;

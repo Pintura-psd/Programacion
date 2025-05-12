@@ -42,4 +42,11 @@ public class VideojuegoDigital extends Videojuego{
     public String getTipo() {
         return "Digital";
     }
+
+    @Override
+    public String toString(){
+        return "Tienda Online: " + this.tiendaOnline + "\n" + "Gigabites: " + this.gigabites;
+    }
+
+
 }

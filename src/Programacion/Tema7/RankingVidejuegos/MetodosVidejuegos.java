@@ -420,6 +420,8 @@ public class MetodosVidejuegos {
         else {
             int contador = 1;
             for (Videojuego vj : ranking){
+                //comprobar el tipo con instanceOf
+                //se ejecutará el toSTring de la clase coresondiente
                 System.out.println("■ " + contador + ": "+ "\n" + vj);
                 contador++;
             }
@@ -446,7 +448,7 @@ public class MetodosVidejuegos {
                         videojuego.getNota() +","+
                         videojuego.getTipo() + "\n";
               try {
-                  Files.writeString(rutaLista,lineaEscritura );
+                  Files.writeString(rutaLista,lineaEscritura, StandardOpenOption.APPEND );
               }
               catch (Exception e){
                   System.out.println("No se ha podido escribir el texto");

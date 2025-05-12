@@ -40,4 +40,9 @@ public class VideojuegoFisico extends Videojuego{
     public String getTipo() {
         return "Fisico";
     }
+
+    @Override
+    public String toString(){
+        return "Tienda Online: " + this.tiendaCompra + "\n" + "Gigabites: " + this.estado;
+    }
 }

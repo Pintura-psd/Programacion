@@ -196,7 +196,7 @@ public class FunkoMetodos {
         double media;
 
         for (Funko funkoTemp : listaImportadaFunkos ){
-           contador =contador + funkoTemp.getPrecio();
+           contador = contador + funkoTemp.getPrecio();
         }
         media = contador / listaImportadaFunkos.size();
         return media;

@@ -15,9 +15,6 @@ public class FunkosMain {
 
         int menuSeleccion=1;
 
-
-
-
         while (menuSeleccion != 0) {
             FunkoMetodos.menu();
             menuSeleccion = FunkoMetodos.seleccion(input);
@@ -32,7 +29,7 @@ public class FunkosMain {
                     break;
                 case 3:
                     System.out.println("Mostrar todos los fukos");
-                    FunkoMetodos.mostrarFunkos(FunkoMetodos.importCSV());
+                    FunkoMetodos.mostrarFunkos(listaImportadaFunkos);
                     break;
                 case 4:
                     System.out.println("Media del precio funkos");

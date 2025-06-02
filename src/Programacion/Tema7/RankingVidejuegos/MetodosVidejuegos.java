@@ -395,7 +395,7 @@ public class MetodosVidejuegos {
             }
             if (sePuedeBorrar){
                 vjList.remove(juegoPosicion);
-                System.out.println("");
+                System.out.println(" ");
                 System.out.println("Se ha eliminado el juego correctamente:");
                 System.out.println("Recuerda guardar los cambios.");
             }

@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class HogwartsMain {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-        String casa = "";
         String[] credenciales = Operaciones.cargarCredenciales();
 
         //Fantasma prueba

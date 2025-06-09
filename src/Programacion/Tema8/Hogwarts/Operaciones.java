@@ -33,14 +33,13 @@ public class Operaciones {
         return credenciales;
     }
 
-    public static void fantasma (String[] credenciales) {
+    public static void fantasma(String[] credenciales) {
         String consulta = "Select * FROM casa";
 
         try (
                 Connection conex = DriverManager.getConnection(credenciales[0], credenciales[1], credenciales[2]);
                 PreparedStatement statement = conex.prepareStatement(consulta)) {
             //Aquí opero con el resultado de la consulta.
-
             ResultSet resultados = statement.executeQuery();
             System.out.println("Prueba: Fantamas de las casas: ");
             System.out.println(" ");
@@ -66,7 +65,7 @@ public class Operaciones {
                 System.out.println(" ");
 
                 while (resultados.next()){
-                    //Cuidado. resultados corresponde a lo que estamos haciendo el select.
+                    //Cuidado, resultados corresponde a lo que estamos haciendo el select.
                     String nombres = resultados.getString("nombre");
                     String apellidos = resultados.getString("apellido");
                     System.out.println(nombres +" "+ apellidos);

@@ -1,5 +1,6 @@
 NOMBRE#AÑO#PRECIO BASE#PRECINTADO#EMBALAJE ORIGINAL#EDICIÓN ESPECIAL
-Spiderman#2020#25.0#TRUE#TRUE#TRUE
-Capitan Garfio#2018#18.50#FALSE#TRUE#FALSE
-Alien#2022#20.0#FALSE#FALSE#FALSE
-Predator#2025#25.0#FALSE#TRUE#TRUE
+Spiderman#2020#25.0#true#truetrue#
+Capitan Garfio#2018#18.5#false#truefalse#
+Alien#2022#20.0#false#falsefalse#
+Predator#2025#25.0#false#truetrue#
+Fer#1999#26.0#true#truetrue#

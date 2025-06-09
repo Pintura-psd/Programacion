@@ -1,6 +1,6 @@
-package Programacion.Estudio_examenRecu.Ejercicio2;
+package Programacion.Estudio_examenRecu.Examen1.Ejercicio2;
 
-import Programacion.Estudio_examenRecu.Ejercicio1.Funko_Pop;
+import Programacion.Estudio_examenRecu.Examen1.Ejercicio1.Funko_Pop;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -25,9 +25,9 @@ public class Ejercicio2_main {
                     Ejercicio2_funciones.addFunko(input,listaFunkos);
                     seleccion= 0;
                     break;
-
                 case 2:
                     System.out.println("Eliminando funko");
+                    Ejercicio2_funciones.eliminarFunkos(listaFunkos,input);
                     seleccion = 0;
                     break;
                 case 3:
@@ -51,6 +51,8 @@ public class Ejercicio2_main {
                     seleccion = 0;
                     break;
                 case 7:
+                    System.out.println("Un momento, serializando lista...");
+                    Ejercicio2_funciones.serlializarLista(listaFunkos);
                     System.out.println("Saliendo...");
                     seleccion = 1;
                     break;

@@ -1,4 +1,6 @@
-package Programacion.PracticaExamen3ev.Funkos;
+package Programacion.Tema7.Funkos;
+
+import Programacion.PracticaExamen3ev.Funkos.Funko2;
 
 import java.io.*;
 import java.nio.file.Files;

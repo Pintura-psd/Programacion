@@ -47,6 +47,4 @@ public class VideojuegoDigital extends Videojuego{
     public String toString(){
         return "Tienda Online: " + this.tiendaOnline + "\n" + "Gigabites: " + this.gigabites;
     }
-
-
 }

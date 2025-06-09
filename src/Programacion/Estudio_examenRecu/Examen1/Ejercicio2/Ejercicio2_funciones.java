@@ -1,13 +1,13 @@
-package Programacion.Estudio_examenRecu.Ejercicio2;
+package Programacion.Estudio_examenRecu.Examen1.Ejercicio2;
 
-import Programacion.Estudio_examenRecu.Ejercicio1.Figura;
-import Programacion.Estudio_examenRecu.Ejercicio1.Funko_Pop;
-import Programacion.Tema7.Funkos.Funko;
+import Programacion.Estudio_examenRecu.Examen1.Ejercicio1.Figura;
+import Programacion.Estudio_examenRecu.Examen1.Ejercicio1.Funko_Pop;
 
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -37,9 +37,9 @@ public class Ejercicio2_funciones {
                        String nombre = funkosLista.get(i).get(0);
                        int year = Integer.parseInt(funkosLista.get(i).get(1));
                        Double precio = Double.parseDouble(funkosLista.get(i).get(2));
-                       Boolean precintado = Boolean.getBoolean(funkosLista.get(i).get(3));
-                       Boolean embalajeOg = Boolean.getBoolean(funkosLista.get(i).get(4));
-                       Boolean edicionEspecial = Boolean.getBoolean(funkosLista.get(i).get(5));
+                       Boolean precintado = Boolean.parseBoolean(funkosLista.get(i).get(3));
+                       Boolean embalajeOg = Boolean.parseBoolean(funkosLista.get(i).get(4));
+                       Boolean edicionEspecial = Boolean.parseBoolean(funkosLista.get(i).get(5));
                        int actualYear = LocalDate.now().getYear();
 
                         Funko_Pop funkoTem = new Funko_Pop(nombre,year,precio,precintado,embalajeOg,edicionEspecial,actualYear);
@@ -61,6 +61,7 @@ public class Ejercicio2_funciones {
         boolean embalajeOG = false;
         double precioBase;
         int fechaAdqusicion = LocalDate.now().getYear();
+        String lineaTxt = "";
 
 
         System.out.println("Añadiendo Funko-Pop: ");
@@ -116,9 +117,72 @@ public class Ejercicio2_funciones {
 
         Funko_Pop funko = new Funko_Pop(nombre,releaseYear,precioBase,precintada,embalajeOG,limitada,fechaAdqusicion);
         funkosLista.add(funko);
+        lineaTxt = nombre +"#"+releaseYear +"#"+precioBase +"#"+precintada +"#"+embalajeOG +"#"+limitada+"\n";
+        escribirTxt(lineaTxt);
         System.out.println(" ");
         System.out.println("Se ha añadido el Funko-Pop: "+ funko.getNombre());
         return funkosLista;
+    }
+
+    public static void escribirTxt (String lineaTxt){
+        Path rutaArchivo = Paths.get("Documentos/Documentos_examen/FunkosListadoExamen.txt");
+       try {
+           Files.writeString(rutaArchivo, lineaTxt, StandardOpenOption.APPEND, StandardOpenOption.WRITE);
+       }
+       catch (Exception e){
+           System.out.println("No se pudo escribir la línea de texto"+ e.getMessage());
+       }
+        System.out.println("Se ha escrito una línea de texto al documento .txt");
+    }
+
+    public static ArrayList<Funko_Pop> eliminarFunkos (ArrayList<Funko_Pop> listaFunkos, Scanner input){
+        String nombre = " ";
+
+        System.out.println("Introduce el nombre del Funko-Pop que desees eliminar: ");
+        nombre = input.nextLine();
+        int contador = 0;
+        int funkoPosicion = 0;
+        boolean encontrado = false;
+
+        for (Figura fg : listaFunkos){
+            if (nombre.equalsIgnoreCase(fg.getNombre())){
+                funkoPosicion = contador;
+                encontrado = true;
+            }
+            contador++;
+        }
+        if (encontrado){
+            listaFunkos.remove(funkoPosicion);
+            System.out.println("Se ha eliminado con éxito.");
+        }
+        else {
+            System.out.println("La figura no está en la lista.");
+        }
+
+        rescribirTxt(listaFunkos);
+        encontrado = false;
+        return listaFunkos;
+    }
+
+    public static void rescribirTxt (ArrayList<Funko_Pop> listaFunkos){
+        Path rutaArchivo = Paths.get("Documentos/Documentos_examen/FunkosListadoExamen.txt");
+        String cabezera = "NOMBRE#AÑO#PRECIO BASE#PRECINTADO#EMBALAJE ORIGINAL#EDICIÓN ESPECIAL";
+
+        try {
+            Files.writeString(rutaArchivo, cabezera+"\n");
+            for (Funko_Pop figura : listaFunkos){
+                try {
+                    Files.writeString(rutaArchivo,figura.getNombre()+"#"+figura.getReleaseYear()+"#"+figura.getPrecioBase()+"#"+figura.isPrecintada()+"#"+figura.isEmbalajeOG()+ figura.isEdicionLimitada()+"#"+"\n", StandardOpenOption.APPEND);
+                }
+                catch (Exception e){
+                    System.out.println("No se pudo realizar bien la reescritura"+ e.getMessage());
+                }
+            }
+        }
+        catch (Exception e){
+            System.out.println("No se ha podido reescribir el archivo."+ e.getMessage());
+        }
+        System.out.println("Se he actualizado la lista con éxito.");
     }
 
     public static void contarFunkos(ArrayList<Funko_Pop> listaFunkos){
@@ -155,6 +219,31 @@ public class Ejercicio2_funciones {
         average = average / listaFunkos.size();
 
         System.out.println("La media de precio es: "+ average);
+    }
+
+    public static void serlializarLista (ArrayList<Funko_Pop> listaFunkos){
+
+        Path rutaArchivo = Paths.get("Documentos/Documentos_examen/ListaSerializadaFunkoPops.txt");
+        if (!Files.exists(rutaArchivo)){
+            System.out.println("El archivo no existe, se va a crear uno.");
+            File listaSerializadaFunkoPops = new File("Documentos/Documentos_examen/ListaSerializadaFunkoPops.txt");
+            try {
+                System.out.println("Serializando...");
+                listaSerializadaFunkoPops.createNewFile();
+            }catch (Exception e){
+                System.out.println("No se ha podido crear el archivo.");
+            }
+        }
+
+        try {
+            ObjectOutputStream oos = new ObjectOutputStream(Files.newOutputStream(rutaArchivo));
+            oos.writeObject(listaFunkos);
+            System.out.println("Se ha serializado con éxito");
+            oos.close();
+        } catch (IOException e) {
+            System.out.println("No se pudo serializar"+ e.getMessage());
+        }
+        System.out.println("Se ha serializado con éxito.");
     }
 
 }

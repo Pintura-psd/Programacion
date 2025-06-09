@@ -1,0 +1,15 @@
+Ranking videojuegos
+Nombre: Shadow of the colossus
+Plataforma: Ps2
+Nota: 10
+Estado: USADO
+Tienda: Tienda FisicaNombre: Hollow Knight Silksong
+Plataforma: PC
+Nota: 9
+Peso: 12.0
+TiendaOnline: Tienda Online
+Peso GB: 12.0Nombre: Pokemon Blanco 2
+Plataforma: DS
+Nota: 5
+Estado: USADO
+Tienda: Tienda Fisica

@@ -1,4 +1,4 @@
-package Programacion.Estudio_examenRecu.Ejercicio1;
+package Programacion.Estudio_examenRecu.Examen1.Ejercicio1;
 
 public class Accesorio {
 

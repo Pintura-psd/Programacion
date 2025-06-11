@@ -1,4 +1,4 @@
-package Programacion.Examen3;
+package Programacion.Estudio_examenRecu.Examen3;
 
 import java.io.InputStream;
 import java.nio.file.Files;

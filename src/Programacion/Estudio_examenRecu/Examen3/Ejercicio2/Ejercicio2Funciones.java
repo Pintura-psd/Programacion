@@ -1,8 +1,7 @@
-package Programacion.Examen3.Ejercicio2;
+package Programacion.Estudio_examenRecu.Examen3.Ejercicio2;
 
-import Programacion.Examen3.Ejercicio1.Embalaje;
-import Programacion.Examen3.Ejercicio1.Figura;
-import Programacion.Examen3.Ejercicio1.Funko_pop;
+import Programacion.Estudio_examenRecu.Examen3.Ejercicio1.Embalaje;
+import Programacion.Estudio_examenRecu.Examen3.Ejercicio1.Funko_pop;
 
 import java.io.File;
 import java.nio.file.Files;

@@ -1,4 +1,4 @@
-package Programacion.Examen3.Ejercicio1;
+package Programacion.Estudio_examenRecu.Examen3.Ejercicio1;
 
 public class Estatua extends Figura{
     private String Faquicia;

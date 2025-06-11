@@ -1,6 +1,4 @@
-package Programacion.Examen3;
-
-import Programacion.Examen3.Ejercicio2.Ejercicio2Funciones;
+package Programacion.Estudio_examenRecu.Examen3;
 
 import java.util.Scanner;
 

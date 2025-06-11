@@ -1,8 +1,6 @@
-package Programacion.Examen3.Ejercicio2;
+package Programacion.Estudio_examenRecu.Examen3.Ejercicio2;
 
-import Programacion.Examen3.Ejercicio1.Ejecicio1Funciones;
-import Programacion.Examen3.Ejercicio1.Ejecicio1main;
-import Programacion.Examen3.Ejercicio1.Funko_pop;
+import Programacion.Estudio_examenRecu.Examen3.Ejercicio1.Funko_pop;
 
 import java.util.ArrayList;
 import java.util.Scanner;
